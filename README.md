@@ -4,23 +4,39 @@
 
 Porsa is a free, open-source, and professional survey/questionnaire builder designed for students, researchers, and educators. Create beautiful, responsive surveys with conditional logic, export data for SPSS analysis, and collect responses — all without writing a single line of code.
 
-✨ Key Features
-Feature	Description
+✨ Key Features (Feature	Description)
+
 🎨 Glassmorphism UI	Beautiful frosted glass design with animated gradient background
+
 📱 Fully Responsive	Works perfectly on desktop, tablet, and mobile devices
+
 🌙 Dark/Light Mode	Toggle between themes with automatic preference saving
+
 📊 SPSS Export	Export responses as CSV with numeric codes for SPSS analysis
+
 📄 Word Export	Generate printable .doc files of your questionnaires
+
 🔗 Conditional Logic	Show/hide questions based on previous answers
+
 💾 Auto-Save Drafts	Responses are automatically saved as drafts
+
 🔍 Search	Quickly find questionnaires by name or section
+
 🖱️ Drag & Drop	Reorder questions and sections with drag and drop
+
 🔒 Lock Questions	Prevent important questions from being edited or deleted
+
 ↩️ Undo (Ctrl+Z)	Revert accidental changes instantly
+
 📈 Statistics	Visual bar charts showing response distribution
+
 🖨️ Print	Clean print-friendly formatting
+
 📤 Import/Export	Import responses from CSV backup files
+
 🚀 Getting Started
+
+
 Option 1: Use Online (No Installation)
 Visit: https://YOUR_USERNAME.github.io/porsa/
 Click ➕ New Questionnaire to create your first survey
