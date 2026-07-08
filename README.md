@@ -76,21 +76,21 @@ Option 3: Run Locally
 📋 Question Types Supported
 
 
-Short Text        📝        Single-line text input
-
-Long Text        📄        Multi-line textarea
-
-Number        🔢        Numeric input with min/max validation
-
-Single Choice        ⭕        Radio buttons (select one)
-
-Multiple Choice        ☑️        Checkboxes (select multiple)
-
-Dropdown        📋        Select menu
-
-Likert Scale        📊        5-point agreement scale
-
-Date        📅        Date input (Jalali calendar)
+            Short Text        📝        Single-line text input
+            
+            Long Text        📄        Multi-line textarea
+            
+            Number        🔢        Numeric input with min/max validation
+            
+            Single Choice        ⭕        Radio buttons (select one)
+            
+            Multiple Choice        ☑️        Checkboxes (select multiple)
+            
+            Dropdown        📋        Select menu
+            
+            Likert Scale        📊        5-point agreement scale
+            
+            Date        📅        Date input (Jalali calendar)
 
 --------------------------
 
@@ -131,14 +131,14 @@ Word Export (.doc)
 
 🛠️ Technical Details
 
-Aspect	                    Details
-Frontend                        HTML5, CSS3, Vanilla JavaScript
-Storage	                   Browser localStorage (no server required)
-Offline                    Support	Service Worker for offline access
-PWA	                       Installable as Progressive Web App
-Size	                      ~50KB (single HTML file)
-Dependencies	              None (zero external libraries)
-Browser Support	           Chrome, Firefox, Safari, Edge
+        Aspect	                    Details
+        Frontend                        HTML5, CSS3, Vanilla JavaScript
+        Storage	                   Browser localStorage (no server required)
+        Offline                    Support	Service Worker for offline access
+        PWA	                       Installable as Progressive Web App
+        Size	                      ~50KB (single HTML file)
+        Dependencies	              None (zero external libraries)
+        Browser Support	           Chrome, Firefox, Safari, Edge
 
 --------------------------
 
