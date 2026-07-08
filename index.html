@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#2c6e9e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>پرسا | پرسشنامه‌ساز حرفه‌ای</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- پس‌زمینه متحرک -->
+    <div class="bg-animation">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- هدر شیشه‌ای -->
+        <header class="app-header glass">
+            <div class="logo-area">
+                <img src="logo.png" alt="لوگوی پرسا" class="logo-img">
+                <div class="title-group">
+                    <div class="title-main">پرسا | پرسشنامه‌ساز حرفه‌ای</div>
+                    <div class="title-sub">Porsa | Professional Survey Builder</div>
+                </div>
+            </div>
+            <div class="header-buttons">
+                <button id="searchBtn" class="btn btn-icon" title="جستجو">
+                    <img src="images/search.png" alt="" class="icon-img">
+                </button>
+                <button id="settingsBtn" class="btn btn-icon" title="تنظیمات ظاهری">
+                    <img src="images/settings.png" alt="" class="icon-img">
+                </button>
+                <button id="darkModeToggle" class="btn btn-icon" title="تغییر تم">
+                    <img src="images/moon.png" alt="" class="icon-img">
+                </button>
+            </div>
+        </header>
+
+        <!-- نوار جستجو -->
+        <div id="searchBar" class="search-bar glass hidden">
+                    <input type="text" id="searchInput" placeholder="جستجوی پرسشنامه..." class="search-input">
+        </div>
+
+        <!-- صفحه داشبورد -->
+    <div id="dashboardPage" class="page active">
+        <div class="flex-between page-header">
+                <h2>پرسشنامه‌های من</h2>
+            <div class="tooltip-container">
+                <button id="newQuestionnaireBtn" class="btn btn-primary glass-btn">
+                    <img src="images/add.png" alt="" class="icon-img">
+                </button>
+                <span class="tooltip-text">ساخت پرسشنامه جدید</span>
+            </div>
+        </div>
+        <div id="questionnairesList" class="grid">
+            <div class="loading-skeleton">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحه سازنده -->
+    <div id="builderPage" class="page">
+        <button class="btn btn-secondary backBtn">
+            <img src="images/close.png" alt="" class="icon-img"> بازگشت
+        </button>
+        <div class="card glass mt-3">
+            <div class="flex-between" style="flex-wrap:wrap;gap:12px;">
+                <h3 id="builderTitle" style="font-size:1.5rem; color:var(--btn-primary);">ساخت پرسشنامه جدید</h3>
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                    <div id="counterBadge" class="counter-badge">
+                        <span class="count" id="sectionCount">0</span> بخش
+                        <span style="opacity:0.4;">|</span>
+                        <span class="count" id="questionCount">0</span> سوال
+                    </div>
+                    <div id="autoSaveIndicator" class="autosave-indicator">
+                        <img src="images/save.png" alt="" class="icon-img" style="width:14px;height:14px;"> <span id="autoSaveText">ذخیره شد</span>
+                    </div>
+                    <div class="tooltip-container">
+                        <button id="previewBtn" class="btn btn-secondary glass-btn">
+                            <img src="images/eye.png" alt="" class="icon-img">
+                        </button>
+                        <span class="tooltip-text">پیش‌نمایش پرسشنامه</span>
+                    </div>
+                </div>
+            </div>
+            <input type="text" id="qName" placeholder="نام پرسشنامه" class="glass-input">
+            <div id="sectionsContainer"></div>
+            <div class="flex-between mt-3">
+                <div class="tooltip-container">
+                    <button id="addSectionBtn" class="btn btn-primary btn-sm glass-btn">
+                        <img src="images/add.png" alt="" class="icon-img">
+                    </button>
+                    <span class="tooltip-text">افزودن بخش جدید</span>
+                </div>
+                <div class="tooltip-container">
+                    <button id="saveQuestionnaireBtn" class="btn btn-success glass-btn">
+                        <img src="images/save.png" alt="" class="icon-img">
+                    </button>
+                    <span class="tooltip-text">ذخیره پرسشنامه</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحه پاسخگویی -->
+    <div id="respondPage" class="page">
+        <button class="btn btn-secondary backBtn">
+            <img src="images/close.png" alt="" class="icon-img"> بازگشت
+        </button>
+        <div id="draftNotice" class="draft-notice glass hidden"></div>
+        <div id="respondForm" class="card glass mt-3"></div>
+        <div class="flex-between mt-3">
+            <div class="tooltip-container">
+                <button id="clearFormBtn" class="btn btn-warning glass-btn">
+                    <img src="images/delete.png" alt="" class="icon-img">
+                </button>
+                <span class="tooltip-text">پاک کردن فرم (بدون ذخیره)</span>
+            </div>
+            <div class="tooltip-container">
+                <button id="submitResponseBtn" class="btn btn-success glass-btn">
+                    <img src="images/check.png" alt="" class="icon-img">
+                </button>
+                <span class="tooltip-text">ثبت پاسخ و شروع فرم جدید</span>
+            </div>
+            <div class="tooltip-container">
+                <button id="submitAndExitBtn" class="btn btn-primary glass-btn">
+                    <img src="images/home.png" alt="" class="icon-img">
+                </button>
+                <span class="tooltip-text">ثبت پاسخ و بازگشت به داشبورد</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحه داده‌ها -->
+    <div id="dataPage" class="page">
+        <button class="btn btn-secondary backBtn">
+            <img src="images/close.png" alt="" class="icon-img"> بازگشت
+        </button>
+        <div id="dataPanel" class="card glass mt-3"></div>
+    </div>
+
+    <!-- صفحه تنظیمات -->
+    <div id="settingsPage" class="page">
+        <button class="btn btn-secondary backBtn">
+            <img src="images/close.png" alt="" class="icon-img"> بازگشت
+        </button>
+        <div class="card glass mt-3">
+            <h3>تنظیمات ظاهری</h3>
+                <div class="settings-grid">
+                    <div class="setting-item">
+                        <label>رنگ اصلی (دکمه‌ها)</label>
+                        <input type="color" id="primaryColor" value="#2c6e9e">
+                    </div>
+                    <div class="setting-item">
+                        <label>رنگ پس‌زمینه کارت‌ها</label>
+                        <input type="color" id="cardBgColor" value="#ffffff">
+                    </div>
+                    <div class="setting-item">
+                        <label>رنگ متن اصلی</label>
+                        <input type="color" id="textColor" value="#1e293b">
+                    </div>
+                    <div class="setting-item">
+                        <label>نوع فونت</label>
+                        <select id="fontSelect" class="glass-input">
+                            <option value="Kalameh">Kalameh</option>
+                            <option value="system-ui">سیستم</option>
+                            <option value="Tahoma">Tahoma</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex-between mt-3">
+                    <div class="tooltip-container">
+                        <button id="resetSettingsBtn" class="btn btn-warning glass-btn">
+                            <img src="images/undo.png" alt="" class="icon-img">
+                        </button>
+                        <span class="tooltip-text">بازگشت به پیش‌فرض</span>
+                    </div>
+                    <div class="tooltip-container">
+                        <button id="applySettingsBtn" class="btn btn-primary glass-btn">
+                            <img src="images/check.png" alt="" class="icon-img">
+                        </button>
+                        <span class="tooltip-text">اعمال تنظیمات</span>
+                    </div>
+                </div>
+                <hr class="glass-hr">
+                <div class="tooltip-container">
+                    <button id="restoreSampleBtn" class="btn btn-primary glass-btn">
+                        <img src="images/undo.png" alt="" class="icon-img">
+                    </button>
+                    <span class="tooltip-text">بازگردانی پرسشنامه نمونه</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- توست نوتیفیکیشن -->
+    <div id="toast" class="toast glass"></div>
+
+    <!-- دکمه راهنما -->
+    <button id="helpBtn" class="help-btn glass" title="راهنما و اطلاعات">?</button>
+
+    <!-- لودر -->
+    <div id="loader" class="loader-overlay hidden">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a18121753984c9ca',t:'MTc4MzUzNTExNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
