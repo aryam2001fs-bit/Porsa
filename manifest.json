@@ -1,0 +1,53 @@
+{
+    "name": "پرسا | پرسشنامه‌ساز حرفه‌ای",
+    "short_name": "پرسا",
+    "description": "ابزار حرفه‌ای ساخت پرسشنامه و جمع‌آوری داده - رایگان و بدون نیاز به اینترنت",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#f0f4f8",
+    "theme_color": "#2c6e9e",
+    "orientation": "any",
+    "dir": "rtl",
+    "lang": "fa",
+    "categories": ["education", "productivity", "utilities"],
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [],
+    "prefer_related_applications": false
+}
